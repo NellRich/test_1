@@ -1,5 +1,4 @@
 #include <iostream>
-#include "stdio.h"
 #include <cmath>
 
 using namespace std;
@@ -20,44 +19,48 @@ int main()
     cin >> b;
     cout << "\nВведите значение c: ";
     cin >> c;
+    cout << endl;
     x = xnach;
     while (x <= xkon)
     {
         if (a == 0 && x < 0 && b != 0)
         {
-            cout << "Функция не квадратичная";
+            cout << "Функция не квадратичная\n";
         }
         else if (x != c && x > 0 && b != 0)
         {
-            cout << "Знаменатель равен нулю. Функция не корректна";
+            cout << "Знаменатель равен нулю. Функция не корректн\n";
         }
         else if (c != 0)
         {
-            cout << "Знаменатель равен нулю. Функция не корректна";
+            cout << "Знаменатель равен нулю. Функция не корректна\n";
         }
         if (x < 0 && b != 0)
         {
-            f = (a * pow(x,2)) + b;
+            f = (a * pow(x, 2)) + b;
         }
         else if (x > 0 && b != 0)
         {
-            f = (x - a) / (x - c);
+            if (x != c)
+                f = (x - a) / (x - c);
+            else
+                f = 0;
         }
         else
         {
-            f = x / c;
+            if (c != 0)
+                f = x / c;
+            else
+                f = 0;
         }
-        int ac = a;
-        int bc = b;
-        int cc = c;
-        if (((ac || bc) && (ac || cc)) != 0)
+        if (((a || b) && (a || c)) != 0)
         {
-            cout << "\nx = " << x << " f = " << f;
+            cout << "x = " << x << " f = " << f << endl;
         }
         else
         {
             int fc = c;
-            cout << "\nx = " << x << " f = " << f;
+            cout << "x = " << x << " f = " << f << endl;
         }
         x = x + dx;
     }

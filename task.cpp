@@ -3,22 +3,23 @@
 
 using namespace std;
 
+void getValue(double &value, const char *outputText)
+{
+    cout << outputText;
+    cin >> value;
+}
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
     double xnach, xkon, dx, a, b, c, x, f;
-    cout << "Введите начальное значение х: ";
-    cin >> xnach;
-    cout << "\nВведите конечное значение х: ";
-    cin >> xkon;
-    cout << "\nВведите значение шага: ";
-    cin >> dx;
-    cout << "\nВведите значение a: ";
-    cin >> a;
-    cout << "\nВведите значение b: ";
-    cin >> b;
-    cout << "\nВведите значение c: ";
-    cin >> c;
+
+    getValue(xnach, "Введите начальное значение х: ");
+    getValue(xkon, "\nВведите конечное значение х: ");
+    getValue(dx, "\nВведите значение шага: ");
+    getValue(a, "\nВведите значение a: ");
+    getValue(b, "\nВведите значение b: ");
+    getValue(c, "\nВведите значение c: ");
     cout << endl;
     x = xnach;
     while (x <= xkon)
@@ -29,7 +30,7 @@ int main()
         }
         else if (x != c && x > 0 && b != 0)
         {
-            cout << "Знаменатель равен нулю. Функция не корректн\n";
+            cout << "Знаменатель равен нулю. Функция не корректна\n";
         }
         else if (c != 0)
         {
